@@ -1,5 +1,8 @@
 package ru.javawebinar.topjava.web;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,8 +13,10 @@ import java.io.IOException;
  * Created by rolep on 30/04/17.
  */
 public class UserServlet extends HttpServlet {
+    private static final Logger LOG = LoggerFactory.getLogger(UserServlet.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        LOG.debug("redirect to userList");
 //        req.getRequestDispatcher("/users.jsp").forward(req, resp);
         resp.sendRedirect("users.jsp");
     }
